@@ -34,7 +34,7 @@ function App() {
 
   return (
     <div className="container" style={{ maxWidth: '800px', margin: '0 auto', padding: '20px' }}>
-      <h1>CS Course: Task Manager</h1>
+      <h1>Task Manager</h1>
       <TaskForm onTaskCreated={loadTasks} />
       
       {loading ? <p>Loading tasks...</p> : (
