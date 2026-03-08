@@ -100,3 +100,13 @@ button[type="submit"] {
 .btn-delete:hover {
   background-color: #fecaca;
 }
+
+.task-date {
+  font-size: 0.85rem;
+  background: #f1f5f9;
+  padding: 4px 8px;
+  border-radius: 4px;
+  display: inline-block;
+  margin-top: 5px;
+  color: var(--primary-color) !important;
+}

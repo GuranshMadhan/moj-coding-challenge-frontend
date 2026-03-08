@@ -4,14 +4,16 @@ import { taskService } from '../api/taskService';
 function TaskForm({ onTaskCreated }) {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
+  const [dueDate, setDueDate] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!title) return alert("Title is required");
 
-    await taskService.createTask({ title, description });
+    await taskService.createTask({ title, description, dueDate: dueDate ? dueDate : null });
     setTitle('');
     setDescription('');
+    setDueDate('');
     onTaskCreated();
   };
 
@@ -27,6 +29,11 @@ function TaskForm({ onTaskCreated }) {
         placeholder="Description (Optional)" 
         value={description} 
         onChange={(e) => setDescription(e.target.value)} 
+      />
+      <input 
+        type="datetime-local" 
+        value={dueDate} 
+        onChange={(e) => setDueDate(e.target.value)} 
       />
       <button type="submit">Create Task</button>
     </form>
